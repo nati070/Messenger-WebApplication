@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const ServerAddress = "messengerwebapp.herokuapp.com"
+const ServerAddress = "https://messengerwebapp.herokuapp.com"
 
 
 const isUserAuthorized = async (user) => {
