@@ -81,7 +81,7 @@ const getNumUnreadMsg = (msgs, username) => {
   return count;
 };
 
-export default {
+const logger = {
   isUserAuthorized,
   saveToken,
   getToken,
@@ -93,4 +93,6 @@ export default {
   getPrivateRoomInfo,
   setReadAllMsgs,
   getNumUnreadMsg,
-};
+}
+
+export default logger
