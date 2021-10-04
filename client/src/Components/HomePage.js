@@ -60,7 +60,7 @@ function HomePageComp(props) {
   const [nameOfRoomVal] = nameOfRoom
   const [socket] = useContext(SocketContext);
 
-  useEffect(() => {
+  useEffect(async () => {
     let isHaveToken = await utils.isUserHaveToken()
     if(!isHaveToken){
       props.history.push('/')
