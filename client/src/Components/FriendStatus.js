@@ -1,11 +1,9 @@
-import { Button, Avatar, Grid } from "@material-ui/core";
+import { Button, Avatar } from "@material-ui/core";
 import { useState, useEffect, useContext } from "react";
 import utils from "../utils/utils";
 import { makeStyles } from "@material-ui/core/styles";
-import CircleRoundedIcon from "@mui/icons-material/CircleRounded";
 import { ChatContext } from "../Contexts/ChatProvider";
 import { SocketContext } from "../Contexts/SocketProvider";
-import { AccessAlarm, FormatAlignJustify, ThreeDRotation } from "@mui/icons-material";
 
 const useStyles = makeStyles((theme) => ({
   grid: {

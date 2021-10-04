@@ -1,21 +1,15 @@
-import { Box, TextField, Button, Grid, Paper, Avatar } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
-import CreateIcon from "@material-ui/icons/Create";
-import React , { useState, useEffect, useContext } from "react";
-import utils from "../utils/utils";
-import { makeStyles } from "@material-ui/core/styles";
+import { Grid, Paper } from "@material-ui/core";
 
+import React , {useEffect, useContext } from "react";
+//import utils from "../utils/utils";
 import { ChatContext } from "../Contexts/ChatProvider";
 import { SocketContext } from "../Contexts/SocketProvider";
-
-import BackgroundChat from "../backgroundImage/ChatBackground.jpg"
 import Background from "../backgroundImage/stars.jpg"
-
 import FriendsListComp from "./FriendsList";
 import ChatComp from "./Chat";
 import SendMessegeBarComp from "./SendMessegeBar";
 import TopBarComp from "./TopBar";
-import { fontSize } from "@mui/system";
+
 
 function HomePageComp(props) {
   const FriendsListPaper = {

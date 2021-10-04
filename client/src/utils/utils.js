@@ -3,7 +3,6 @@ import { io } from "socket.io-client";
 
 const ServerAddress = 'messengerwebapp.herokuapp.com'
 
-let listOnline = [];
 
 const isUserAuthorized = async (user) => {
   const user_json = await axios.post(ServerAddress + "/api/login", user);

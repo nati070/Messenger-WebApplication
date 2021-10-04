@@ -1,13 +1,7 @@
 import {
-  Box,
-  TextField,
-  Button,
   Grid,
-  Paper,
-  Avatar,
   InputBase,
 } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 import SearchIcon from "@material-ui/icons/Search";
 import { useState, useEffect, useContext } from "react";
 import utils from "../utils/utils";
