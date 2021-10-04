@@ -1,6 +1,8 @@
 import React, { useState, createContext, useEffect } from "react";
 import { io } from "socket.io-client";
 
+const socketAddress = "https://messengerwebapp.herokuapp.com"
+
 export const SocketContext = React.createContext();
 
 export const SocketContextProvider = (props) => {
@@ -8,7 +10,7 @@ export const SocketContextProvider = (props) => {
 
 
   useEffect(() => {
-    const newSocket = io("http://localhost:8000");
+    const newSocket = io(socketAddress);
     setSocket(newSocket);
     return () => newSocket.disconnect();
   }, []);

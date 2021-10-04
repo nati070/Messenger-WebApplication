@@ -22,7 +22,6 @@ ReactDOM.render(
     </SocketContextProvider>
   </BrowserRouter>
   ,
-  
   document.getElementById('root')
 );
 

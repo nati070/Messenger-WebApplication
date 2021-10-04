@@ -43,7 +43,6 @@ function SendMessegeBarComp() {
       let receive = dataChatVal.participates.find(
         (user) => user != usernameVal
       );
-      console.log(receive);
       socket.emit("msg", {
         msg: msg,
         send: usernameVal,
