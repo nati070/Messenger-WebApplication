@@ -28,12 +28,12 @@ function ChatComp(props) {
       let room =  conversationVal.map((msg, index) => {
         console.log(msg)
         return (  
-          ((msg.send == usernameVal) ?  <RecieveComp key={index} msg={msg.msg}/> : <SendComp  key={index} msg={msg.msg}/> )
+          ((msg.send === usernameVal) ?  <RecieveComp key={index} msg={msg.msg}/> : <SendComp  key={index} msg={msg.msg}/> )
         );
       });
       setConversationDisplay(room);
     }
-  }, [socket , conversationVal]);
+  }, [socket , conversationVal,usernameVal]);
 
   useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "auto"})
