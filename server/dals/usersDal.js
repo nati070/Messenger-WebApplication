@@ -1,4 +1,4 @@
-const userDBModel = require("../models/usersDBModel");
+const userDBModel = require("../models/UsersDBModel");
 
 exports.findByUserAndPass = (user) => {
   return new Promise((resolve, reject) => {

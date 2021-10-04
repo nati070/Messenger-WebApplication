@@ -1,10 +1,12 @@
 import axios from "axios";
 import { io } from "socket.io-client";
 
+const ServerAddress = 'messengerwebapp.herokuapp.com'
+
 let listOnline = [];
 
 const isUserAuthorized = async (user) => {
-  const user_json = await axios.post("http://localhost:8000/api/login", user);
+  const user_json = await axios.post(ServerAddress + "/api/login", user);
   return user_json;
 };
 
@@ -15,7 +17,7 @@ const getToken = () => {
   return sessionStorage["token"];
 };
 const isUserHaveToken = async () => {
-  const tokenData = await axios.get("http://localhost:8000/api/isHaveToken", {
+  const tokenData = await axios.get(ServerAddress + "/api/isHaveToken", {
     headers: {
       "x-access-token": sessionStorage["token"],
     },
@@ -25,12 +27,12 @@ const isUserHaveToken = async () => {
 };
 
 const setNewUser = async (user) => {
-  await axios.post("http://localhost:8000/api/create-user", user);
+  await axios.post(ServerAddress + "/api/create-user", user);
 };
 
 const isUserExist = async (username) => {
   const isUserExist = await axios.post(
-    "http://localhost:8000/api/find-username",
+    ServerAddress + "/api/find-username",
     username
   );
   return isUserExist.data.ans;
@@ -49,7 +51,7 @@ const getOnlineUsers = (socket) => {
 //get all the users into the FriendList component
 const getAllOthersUsers = async (username) => {
   let users = await axios.post(
-    "http://localhost:8000/api/get-all-other-users",
+    ServerAddress + "/api/get-all-other-users",
     username
   );
   return users.data;
@@ -57,7 +59,7 @@ const getAllOthersUsers = async (username) => {
 
 const getPrivateRoomInfo = async (users) => {
   let dataRoom = await axios.post(
-    "http://localhost:8000/api/get-users-data-room",
+    ServerAddress + "/api/get-users-data-room",
     users
   );
   return dataRoom.data;
@@ -65,7 +67,7 @@ const getPrivateRoomInfo = async (users) => {
 
 const setReadAllMsgs = async (id, username) => {
   console.log(id);
-  await axios.post("http://localhost:8000/api/set-read-all-msgs", {
+  await axios.post(ServerAddress + "/api/set-read-all-msgs", {
     id: id,
     sender: username,
   });

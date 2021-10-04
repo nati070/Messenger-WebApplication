@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const socketio = require("socket.io");
 const http = require("http");
+require('dotenv').config();
 
 // const session = require('express-session')
 let app = express();
@@ -35,4 +36,6 @@ io.on("connection", (socket) => {
   require('./models/SocketModel').sockets(socket)
 });
 
-server.listen(8000);
+server.listen(process.env.PORT || 8000,()=>{
+  console.log("you are connected")
+});
