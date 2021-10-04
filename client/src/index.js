@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { BrowserRouter , HashRouter } from "react-router-dom";
+import { BrowserRouter  } from "react-router-dom";
 
 import {ChatContextProvider} from './Contexts/ChatProvider'
 import {SocketContextProvider} from './Contexts/SocketProvider'
@@ -13,13 +13,13 @@ import {SocketContextProvider} from './Contexts/SocketProvider'
 
 
 ReactDOM.render(
-  <HashRouter>
+  <BrowserRouter>
   <SocketContextProvider>
   <ChatContextProvider>
     <App />
     </ChatContextProvider>
     </SocketContextProvider>
-  </HashRouter>,
+  </BrowserRouter>,
   document.getElementById('root')
 );
 
