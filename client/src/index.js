@@ -13,13 +13,16 @@ import {SocketContextProvider} from './Contexts/SocketProvider'
 
 
 ReactDOM.render(
+  <React.StrictMode>
   <BrowserRouter>
   <SocketContextProvider>
   <ChatContextProvider>
     <App />
     </ChatContextProvider>
     </SocketContextProvider>
-  </BrowserRouter>,
+  </BrowserRouter>
+  </React.StrictMode>,
+  
   document.getElementById('root')
 );
 
