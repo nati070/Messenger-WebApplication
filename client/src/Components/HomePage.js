@@ -1,7 +1,7 @@
 import { Grid, Paper } from "@material-ui/core";
 
 import React , {useEffect, useContext } from "react";
-//import utils from "../utils/utils";
+import utils from "../utils/utils";
 import { ChatContext } from "../Contexts/ChatProvider";
 import { SocketContext } from "../Contexts/SocketProvider";
 import Background from "../backgroundImage/stars.jpg"
