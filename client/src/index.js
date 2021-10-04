@@ -13,7 +13,7 @@ import {SocketContextProvider} from './Contexts/SocketProvider'
 
 
 ReactDOM.render(
-  <React.StrictMode>
+ 
   <BrowserRouter>
   <SocketContextProvider>
   <ChatContextProvider>
@@ -21,7 +21,7 @@ ReactDOM.render(
     </ChatContextProvider>
     </SocketContextProvider>
   </BrowserRouter>
-  </React.StrictMode>,
+  ,
   
   document.getElementById('root')
 );
