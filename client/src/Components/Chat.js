@@ -26,7 +26,6 @@ function ChatComp(props) {
   useEffect(() => {
     if (conversationVal) {
       let room =  conversationVal.map((msg, index) => {
-        console.log(msg)
         return (  
           ((msg.send === usernameVal) ?  <RecieveComp key={index} msg={msg.msg}/> : <SendComp  key={index} msg={msg.msg}/> )
         );

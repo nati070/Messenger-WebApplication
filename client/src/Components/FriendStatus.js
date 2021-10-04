@@ -60,7 +60,6 @@ function FriendStatusComp(props) {
   }, [usernameVal]);
 
   useEffect(() => {
-    console.log(333);
     socket.on("listenToMsg", (msg) => {
       if (msg.id == dataChatCurrent._id) {
         setConversationRoom([...conversationRoom, msg]);
