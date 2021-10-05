@@ -21,8 +21,8 @@ function LoginPageComp() {
     <div style={style}>
       <Switch>
         <Route exact path="/" component={LoginFormComp} />
-        <Route path="https://615c6beb2d501f0007d978d7--quirky-noyce-6ef7be.netlify.app/sign-up" component={SignUpFormComp} />
-        <Route path="/home" component={HomePageComp} />
+        <Route exact path="/sign-up" component={SignUpFormComp} />
+        <Route exact path="/home" component={HomePageComp} />
       </Switch>
     </div>
   );
