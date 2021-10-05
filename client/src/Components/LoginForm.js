@@ -104,7 +104,7 @@ function LoginFormComp(props) {
           <TextField
             
             style={TextFildsStyle}
-            id="outlined-basic"
+            id="outlined-basic1"
             label="Password"
             type="password"
             variant="outlined"

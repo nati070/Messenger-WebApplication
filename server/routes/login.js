@@ -33,7 +33,7 @@ router.route("/login").post(async (req, res) => {
     let user_data = await userModel.validateUser(user);
     if (user_data.length > 0) {
       const token = jwt.sign({ id: user_data.id }, "jwtsecret", {
-        expiresIn: 10,
+        expiresIn: 120,
       });
       res.status(200).json({ auth: true, token: token });
     } else {
