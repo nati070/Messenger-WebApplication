@@ -57,13 +57,13 @@ function HomePageComp(props) {
   const [socket] = useContext(SocketContext);
 
   useEffect(async () => {
-    console.log("hello")
-    console.log(usernameVal)
+   
     let isHaveToken = await utils.isUserHaveToken();
     if (!isHaveToken) {
-      props.history.push("/");
+      console.log( props.history)
+      props.history.goBack();
     }
-    // utils.connectToSeverChat(username)
+  
     if (socket && usernameVal != "") {
       socket.emit("EnterToOnlineList", usernameVal);
     }
