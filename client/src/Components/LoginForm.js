@@ -18,6 +18,7 @@ import {useState , useEffect} from 'react'
 import utils from '../utils/utils'
 
 
+
 function LoginFormComp(props) {
 
   const originalPaparSize = 380;
@@ -60,8 +61,8 @@ function LoginFormComp(props) {
 
   useEffect(async ()=>{
     let isHaveToken = await utils.isUserHaveToken()
-    if(isHaveToken){
-      props.history.push('/home')
+    if(isHaveToken){ 
+      props.history.push('/home' , {username : utils.getUsername()})     
     }
     if(props.location.state){
       setPaperHeight(paperHeight+50)
@@ -74,6 +75,7 @@ function LoginFormComp(props) {
         let userAuth = await utils.isUserAuthorized(user)
         if(userAuth.data.auth){
           utils.saveToken(userAuth.data.token)
+          utils.saveUserName(username)
           props.history.push('/home' , {username : username})          
         }
         else{

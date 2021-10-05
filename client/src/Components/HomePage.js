@@ -1,21 +1,20 @@
 import { Grid, Paper } from "@material-ui/core";
 
-import React , {useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import utils from "../utils/utils";
 import { ChatContext } from "../Contexts/ChatProvider";
 import { SocketContext } from "../Contexts/SocketProvider";
-import Background from "../backgroundImage/stars.jpg"
+import Background from "../backgroundImage/stars.jpg";
 import FriendsListComp from "./FriendsList";
 import ChatComp from "./Chat";
 import SendMessegeBarComp from "./SendMessegeBar";
 import TopBarComp from "./TopBar";
 
-
 function HomePageComp(props) {
   const FriendsListPaper = {
     height: "100vh",
     //maxHeight: 200,
-     overflow: 'auto',
+    overflow: "auto",
     // margin: "20px auto",
     // backgroundColor: '#282c34',
     backgroundImage: `url(${Background})`,
@@ -24,7 +23,7 @@ function HomePageComp(props) {
   };
   const userBarPaper = {
     height: "80px",
-    overflow: 'hidden',
+    overflow: "hidden",
     color: "white",
 
     fontStyle: "italic",
@@ -34,12 +33,12 @@ function HomePageComp(props) {
 
   const UsersChatPaper = {
     height: "calc(100vh - 140px)",
-    overflow: 'auto',
+    overflow: "auto",
     backgroundColor: "#cccccc",
   };
   const TypeChatPaper = {
     height: "60px",
-    overflow: 'hidden',
+    overflow: "hidden",
     color: "white",
     backgroundImage: `url(${Background})`,
     backgroundSize: "cover",
@@ -50,34 +49,31 @@ function HomePageComp(props) {
     color: "white",
     textAlign: "center",
     padding: "20%",
+  };
 
-    
-  }
-
-
-  const {nameOfRoom , username } = useContext(ChatContext);
-  const [usernameVal , setUsername] = username
-  const [nameOfRoomVal] = nameOfRoom
+  const { nameOfRoom, username } = useContext(ChatContext);
+  const [usernameVal, setUsername] = username;
+  const [nameOfRoomVal] = nameOfRoom;
   const [socket] = useContext(SocketContext);
 
   useEffect(async () => {
-    let isHaveToken = await utils.isUserHaveToken()
-    if(!isHaveToken){
-      props.history.push('/')
+    console.log("hello")
+    console.log(usernameVal)
+    let isHaveToken = await utils.isUserHaveToken();
+    if (!isHaveToken) {
+      props.history.push("/");
     }
-    utils.connectToSeverChat(username)
+    // utils.connectToSeverChat(username)
     if (socket && usernameVal != "") {
       socket.emit("EnterToOnlineList", usernameVal);
     }
-  }, [socket , usernameVal]);
-
-  
-
+  }, [socket, usernameVal]);
 
   useEffect(() => {
-    setUsername(props.location.state.username.toLowerCase())
-  }, []);
-
+    if (props.location.state) {
+      setUsername(props.location.state.username.toLowerCase());
+    }
+  }, [usernameVal]);
 
   const ChatsComps = () => {
     if (nameOfRoomVal != "") {
@@ -95,10 +91,11 @@ function HomePageComp(props) {
         </Grid>
       );
     } else {
-      return <Grid item xs={9} style={StartPage}> 
-      <h1>Hey Welcome to ChatApp!</h1>
-      
-      </Grid>;
+      return (
+        <Grid item xs={9} style={StartPage}>
+          <h1>Hey Welcome to ChatApp!</h1>
+        </Grid>
+      );
     }
   };
 

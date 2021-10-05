@@ -8,9 +8,17 @@ const isUserAuthorized = async (user) => {
   return user_json;
 };
 
+const saveUserName = (username)=>{
+  sessionStorage["username"] = username 
+}
+const getUsername = () => {
+  return sessionStorage["username"];
+};
+
 const saveToken = (token) => {
   sessionStorage["token"] = token;
 };
+
 const getToken = () => {
   return sessionStorage["token"];
 };
@@ -93,6 +101,8 @@ const logger = {
   getPrivateRoomInfo,
   setReadAllMsgs,
   getNumUnreadMsg,
+  saveUserName,
+  getUsername
 }
 
 export default logger
