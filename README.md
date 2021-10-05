@@ -1,6 +1,6 @@
 # Messenger Application #   
 
-Live Application [here](https://615c6beb2d501f0007d978d7--quirky-noyce-6ef7be.netlify.app).
+Live Application [here](https://chatappspace.netlify.app).
 
 ## Table of Contents  ##
 * [General Info](#Generalinfo)
