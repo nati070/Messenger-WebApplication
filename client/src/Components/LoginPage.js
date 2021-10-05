@@ -5,7 +5,7 @@ import HomePageComp from "./HomePage";
 
 import Background from "../backgroundImage/starsLogin.jpg";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
 
 function LoginPageComp() {
@@ -21,7 +21,7 @@ function LoginPageComp() {
     <div style={style}>
       <Switch>
         <Route exact path="/" component={LoginFormComp} />
-        <Route path="/sign-up" component={SignUpFormComp} />
+        <Route path="https://615c6beb2d501f0007d978d7--quirky-noyce-6ef7be.netlify.app/sign-up" component={SignUpFormComp} />
         <Route path="/home" component={HomePageComp} />
       </Switch>
     </div>
