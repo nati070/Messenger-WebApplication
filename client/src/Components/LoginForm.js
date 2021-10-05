@@ -58,6 +58,7 @@ function LoginFormComp(props) {
 
   const [username , setUsername] = useState('')
   const [password , setpassword] = useState('')
+  const [errorlabel , setErrorLabel] = useState(false)
 
   useEffect(async ()=>{
     let isHaveToken = await utils.isUserHaveToken()
@@ -79,6 +80,7 @@ function LoginFormComp(props) {
           props.history.push('/home' , {username : username})          
         }
         else{
+          setErrorLabel(true)
           console.log("Wrong User OR Password")
         }
   }
@@ -101,6 +103,8 @@ function LoginFormComp(props) {
             variant="outlined"
             fullWidth
             required
+            error = {errorlabel}
+            
             onChange={e => setUsername(e.target.value)}
           />
           <TextField
@@ -113,6 +117,7 @@ function LoginFormComp(props) {
             fullWidth
             required
             onChange={e => setpassword(e.target.value)}
+            error = {errorlabel}
           />
         </Grid>
         <FormControlLabel
