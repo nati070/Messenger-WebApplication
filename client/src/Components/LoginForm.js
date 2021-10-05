@@ -138,7 +138,7 @@ function LoginFormComp(props) {
 
         <Typography >
           Need To
-          <Link href="/sign-up" style={LinkSignUpStyle}>Sign Up?</Link>
+          <Link href="/signup" style={LinkSignUpStyle}>Sign Up?</Link>
         </Typography>
       </Paper>
     </Grid>
