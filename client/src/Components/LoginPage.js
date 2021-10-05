@@ -21,7 +21,7 @@ function LoginPageComp() {
     <div style={style}>
       <Switch>
         <Route exact path="/" component={LoginFormComp} />
-        <Route exact path="/signup" component={SignUpFormComp} />
+        <Route exact path="/sign-up" component={SignUpFormComp} />
         <Route exact path="/home" component={HomePageComp} />
       </Switch>
     </div>
