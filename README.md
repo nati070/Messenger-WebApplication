@@ -51,10 +51,11 @@ Project is created with:
 <a name="Screenshots"></a>
 ## Screenshots ##
 ### Login: ###
+![alt text](/screenshot/signIn.PNG)
 ### Signup: ###
-![alt text](/screenshot/signUpPic.PNG)
+![alt text](/screenshot/signUp.PNG)
 ### Main: ###
-![alt text](/screenshot/start.PNG)
-![alt text](/screenshot/start_with_unread_msg.PNG)
+![alt text](/screenshot/start.png)
+![alt text](/screenshot/start_with_unread_msg.png)
 ### Chat: ###
-![alt text](/screenshot/chat.PNG)
+![alt text](/screenshot/chat.png)
