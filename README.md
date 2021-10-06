@@ -52,5 +52,9 @@ Project is created with:
 ## Screenshots ##
 ### Login: ###
 ### Signup: ###
+![alt text](/screenshot/signUpPic.PNG)
 ### Main: ###
+![alt text](/screenshot/start.PNG)
+![alt text](/screenshot/start_with_unread_msg.PNG)
 ### Chat: ###
+![alt text](/screenshot/chat.PNG)
